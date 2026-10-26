@@ -2,7 +2,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { Button, StyleSheet, Text, View } from "react-native";
 
 export default function ReviewScreen(){
-    const router = useRouter(); //
+    const router = useRouter(); //'useRouter' is used to navigate between screen
 
     //Extract parameters passed from the previous screen
     const{userName, email, phoneNumber} = useLocalSearchParams();
@@ -26,7 +26,7 @@ export default function ReviewScreen(){
             </View>
 
             <View style = {styles.buttonContainer}>
-                {/* */}
+                {/*router.back() pops this screen off the stack returning to the previous screen's preserved state*/}
                 <Button title="Edit Info" color="red" onPress={()=> router.back()} />
                 <Button title="Confirm & Submit" onPress={handleConfirm} />
             </View>
